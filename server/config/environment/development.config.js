@@ -1,12 +1,13 @@
 'use strict';
 
 let name = 'fizbonemanager';
+let domain = process.env.DOMAIN || `http://localhost:${process.env.PORT}`
 
 module.exports = {
 	facebook: {
 		clientID: '',
 		clientSecret: '',
-		callbackURL: `http://${process.env.DOMAIN}:${process.env.PORT}/api/auth/facebook/callback`
+		callbackURL: `${domain}:${process.env.PORT}/api/auth/facebook/callback`
 	},
 	mongo: {
 		uri: `mongodb://localhost/${name}`,
